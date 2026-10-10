@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jaiaakash B | ECE Student | Electronics & Embedded Systems</title>
+<meta name="description" content="Portfolio of Jaiaakash B, a 2nd-year Electronics and Communication Engineering student interested in electronics, embedded systems, PCB design, circuit development and innovative engineering projects.">
+<meta property="og:title" content="Jaiaakash B | ECE Student | Electronics & Embedded Systems">
+<meta property="og:description" content="2nd-year ECE student building electronics, embedded and PCB projects.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="profile.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#050a14; --navy:#0a1424; --card:#0d1a2e; --line:#1b2c47;
+  --paper:#eef2f8; --paper-ink:#0a1424;
+  --blue:#2f7bff; --cyan:#22d3ee; --text:#e8eef8; --mute:#8fa1bd;
+  --f:'Archivo','Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:var(--f);background:var(--ink);color:var(--text);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.sr{position:absolute;left:-9999px}
+
+/* NAV */
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(5,10,20,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-weight:800;letter-spacing:.02em}
+.links{display:flex;gap:22px;align-items:center;font-size:14px;color:var(--mute)}
+.links a{position:relative;padding:4px 0}
+.links a.on{color:#fff}
+.links a.on::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border:1px solid var(--blue);background:var(--blue);color:#fff;font:600 14px var(--f);cursor:pointer;border-radius:4px;transition:.2s}
+.btn:hover{background:transparent;color:var(--cyan);border-color:var(--cyan)}
+.btn.ghost{background:transparent;border-color:#3a4d6e}
+.btn.sm{padding:8px 14px}
+.burger{display:none;background:none;border:1px solid var(--line);color:#fff;width:42px;height:42px;border-radius:4px;font-size:20px;cursor:pointer}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:110px 0 70px;overflow:hidden;
+  background:radial-gradient(60% 60% at 80% 40%,rgba(47,123,255,.22),transparent 70%),var(--ink)}
+#bg{position:absolute;inset:0;width:100%;height:100%;opacity:.5;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+.idx{font-size:clamp(40px,6vw,76px);font-weight:300;color:var(--cyan);line-height:1}
+.idx small{display:block;font-size:12px;font-weight:500;color:var(--mute);letter-spacing:.04em;margin-top:6px}
+h1{font-size:clamp(52px,10.5vw,148px);font-weight:900;font-stretch:80%;line-height:.88;letter-spacing:-.025em;margin:18px 0 26px;text-transform:uppercase}
+h1 span{display:block;-webkit-text-stroke:2px var(--blue);color:transparent}
+.role{font-size:clamp(18px,2.2vw,26px);font-weight:600}
+.intro{max-width:52ch;color:var(--mute);margin:12px 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.soc{display:flex;gap:10px;margin-top:26px}
+.soc a{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;color:var(--mute);transition:.2s}
+.soc a:hover{color:var(--cyan);border-color:var(--cyan)}
+.photo{position:relative;aspect-ratio:4/5;border-radius:6px;border:1px solid var(--line);background:var(--card);box-shadow:0 0 70px rgba(34,211,238,.18);overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.photo:hover img{transform:scale(1.03)}
+.photo .ph{position:absolute;inset:0;display:none;place-items:center;font-size:90px;font-weight:900;color:var(--line)}
+.tag{position:absolute;left:12px;bottom:12px;background:rgba(5,10,20,.8);border:1px solid var(--line);padding:6px 10px;font-size:12px;border-radius:3px}
+.badge{display:inline-block;border:1px solid var(--blue);color:var(--cyan);padding:5px 12px;border-radius:99px;font-size:12px;font-weight:600;margin-bottom:6px}
+.scroll{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--mute)}
+
+/* SECTIONS */
+section{padding:110px 0;position:relative}
+.light{background:var(--paper);color:var(--paper-ink)}
+.light .mute{color:#51627f}
+.sec{display:grid;grid-template-columns:70px 1fr;gap:20px}
+.vlabel{writing-mode:vertical-rl;transform:rotate(180deg);font-size:clamp(40px,6vw,76px);font-weight:300;color:rgba(143,161,189,.35);line-height:1;white-space:nowrap;align-self:start}
+.light .vlabel{color:rgba(10,20,36,.18)}
+.rule{display:flex;justify-content:space-between;font-size:12px;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:40px}
+.light .rule{border-color:#cdd6e4;color:#51627f}
+h2{font-size:clamp(30px,4.2vw,54px);font-weight:800;line-height:1.05;letter-spacing:-.02em;max-width:22ch}
+.lead{max-width:62ch;margin-top:18px}
+.mute{color:var(--mute)}
+.grid{display:grid;gap:18px;margin-top:44px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:26px;transition:border-color .25s}
+.card:hover{border-color:var(--cyan)}
+.light .card{background:#fff;border-color:#d5ddea}
+.light .card:hover{border-color:var(--blue)}
+.card h3{font-size:19px;margin-bottom:6px}
+.card p{font-size:15px;color:var(--mute)}
+.light .card p{color:#51627f}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:44px;border-top:1px solid #cdd6e4}
+.fact{padding:26px 0;border-bottom:1px solid #cdd6e4}
+.fact b{display:block;font-size:clamp(40px,6vw,76px);font-weight:800;line-height:1}
+.fact span{font-size:14px;color:#51627f}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{border:1px solid var(--line);border-radius:3px;padding:5px 11px;font-size:13px;color:var(--text);background:#0a1628}
+.bar{height:3px;background:var(--line);margin-top:6px;border-radius:2px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan))}
+.skill{font-size:14px;margin-top:14px}
+.proj .cat{font-size:13px;color:var(--cyan);margin-bottom:8px}
+.proj{display:flex;flex-direction:column}
+.proj .row{margin-top:auto;padding-top:22px;display:flex;gap:10px;flex-wrap:wrap}
+.status{font-size:12px;color:var(--mute);margin-top:10px}
+.tl{margin-top:44px;border-left:1px solid var(--line);margin-left:6px}
+.tl>div{position:relative;padding:0 0 34px 28px}
+.tl>div::before{content:"";position:absolute;left:-6px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--ink);border:2px solid var(--cyan)}
+.light .tl{border-color:#cdd6e4}.light .tl>div::before{background:var(--paper)}
+.tl em{font-style:normal;color:var(--cyan);font-size:13px;font-weight:600}
+.light .tl em{color:var(--blue)}
+.tl h3{font-size:20px;margin:2px 0}
+.ph-note{display:inline-block;border:1px dashed #5b6f94;padding:2px 8px;border-radius:3px;font-size:13px;color:#9db0cf}
+.light .ph-note{color:#51627f;border-color:#9aa9c2}
+.ico{width:34px;height:34px;stroke:var(--cyan);fill:none;stroke-width:1.5;margin-bottom:14px}
+.light .ico{stroke:var(--blue)}
+
+/* FORM */
+form{display:grid;gap:14px}
+label{font-size:13px;color:var(--mute);display:block;margin-bottom:5px}
+input,textarea{width:100%;background:var(--ink);border:1px solid var(--line);color:#fff;padding:12px;border-radius:4px;font:inherit}
+textarea{min-height:130px;resize:vertical}
+.err{color:#ff7a7a;font-size:12px;min-height:16px}
+.ok{color:var(--cyan);font-size:14px}
+footer{border-top:1px solid var(--line);padding:50px 0 30px;font-size:14px;color:var(--mute)}
+footer .top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+footer .fl{display:flex;gap:18px;flex-wrap:wrap}
+footer .bot{margin-top:34px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13px}
+
+/* MODAL */
+.modal{position:fixed;inset:0;z-index:100;background:rgba(2,5,10,.78);display:grid;place-items:center;padding:20px;opacity:0;visibility:hidden;transition:.25s}
+.modal.open{opacity:1;visibility:visible}
+.doc{background:var(--navy);border:1px solid var(--line);border-radius:6px;max-width:760px;width:100%;max-height:88vh;overflow:auto;padding:34px;transform:translateY(16px);transition:.25s}
+.modal.open .doc{transform:none}
+.doc h3{font-size:26px;line-height:1.15;margin-bottom:4px}
+.doc h4{font-size:13px;color:var(--cyan);margin:22px 0 4px}
+.doc p,.doc li{font-size:15px;color:#c3cfe3}
+.doc ul{padding-left:18px}
+.x{float:right}
+
+/* motion */
+.rv{opacity:0;transform:translateY(14px);transition:.7s}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+
+/* RESPONSIVE */
+@media (max-width:1024px){.g4{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(2,1fr)}.links{gap:14px;font-size:13px}}
+@media (max-width:860px){
+  .burger{display:block}
+  .links{position:absolute;top:62px;left:0;right:0;background:var(--ink);flex-direction:column;align-items:flex-start;padding:18px 28px;gap:16px;border-bottom:1px solid var(--line);display:none}
+  .links.open{display:flex}
+  .hero .wrap{grid-template-columns:1fr}
+  .photo{max-width:340px;margin:0 auto;order:-1}
+  .hero{padding-top:100px}
+  .scroll{display:none}
+}
+@media (max-width:640px){
+  .wrap{padding:0 18px}
+  section{padding:80px 0}
+  .sec{grid-template-columns:1fr}
+  .vlabel{writing-mode:horizontal-tb;transform:none;font-size:34px}
+  .g3,.g2,.g4,.facts{grid-template-columns:1fr}
+  .btn{width:100%;justify-content:center}
+  .cta .btn,.row .btn{flex:1}
+  .doc{padding:22px}
+}
+</style>
+</head>
+<body>
+<a class="sr" href="#main">Skip to content</a>
+<header>
+  <div class="wrap"><nav aria-label="Primary">
+    <a class="logo" href="#home">JAIAAKASH B</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+    <div class="links" id="links">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+      <a href="#experience">Experience</a><a href="#achievements">Achievements</a><a href="#education">Education</a><a href="#contact">Contact</a>
+      <a class="btn sm" href="resume.pdf" download>Download Resume</a>
+    </div>
+  </nav></div>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="home" style="padding-top:110px">
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <div class="idx">/26<small>Portfolio · ECE · MKCE</small></div>
+      <h1>Jaiaakash <span>Portfolio</span></h1>
+      <span class="badge">ECE UNDERGRADUATE • 2ND YEAR</span>
+      <p class="role">Hi, I'm Jaiaakash B. Electronics & Communication Engineering Student</p>
+      <p class="intro">I’m a 2nd-year B.E. Electronics and Communication Engineering student passionate about electronics, circuit design, embedded systems, PCB development and innovative engineering solutions.</p>
+      <div class="cta">
+        <a class="btn" href="#projects">View My Projects</a>
+        <a class="btn ghost" href="resume.pdf" download>Download Resume</a>
+      </div>
+      <div class="soc">
+        <a href="https://linkedin.com/in/YOUR-PROFILE" aria-label="LinkedIn">in</a>
+        <a href="https://github.com/YOUR-USERNAME" aria-label="GitHub">GH</a>
+        <a href="mailto:your.email@example.com" aria-label="Email">@</a>
+      </div>
+    </div>
+    <figure class="photo">
+      <img src="profile.jpg" alt="Portrait of Jaiaakash B in a suit" width="480" height="600" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+      <div class="ph" aria-hidden="true">JB</div>
+      <figcaption class="tag">Jaiaakash B · ECE, MKCE</figcaption>
+    </figure>
+  </div>
+  <div class="scroll">Scroll to explore ↓</div>
+</section>
+
+<!-- ABOUT (light) -->
+<section class="light" id="about">
+  <div class="wrap">
+    <div class="rule"><span>/introduction</span><span>about</span></div>
+    <div class="sec"><div class="vlabel" aria-hidden="true">/about me</div>
+    <div>
+      <h2 class="rv">Engineering student. Problem solver. Electronics enthusiast.</h2>
+      <p class="lead rv">I am Jaiaakash B, currently pursuing my B.E. in Electronics and Communication Engineering at M. Kumarasamy College of Engineering. I am currently in my 2nd year and continuously developing my knowledge in electronics, circuit analysis, digital systems, programming and practical project development.</p>
+      <p class="lead rv">My goal is to strengthen my technical foundation through hands-on projects, technical events, internships and real-world engineering challenges. I enjoy transforming ideas into practical electronic systems and exploring innovative solutions to engineering problems.</p>
+      <div class="facts">
+        <div class="fact rv"><b>ECE</b><span>B.E. Electronics & Communication Engineering</span></div>
+        <div class="fact rv"><b>Year 2</b><span>Currently pursuing undergraduate education</span></div>
+        <div class="fact rv"><b>3</b><span>Electronics projects documented here</span></div>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="rule"><span>/skills</span><span>fundamentals first</span></div>
+    <div class="sec"><div class="vlabel" aria-hidden="true">/skills</div>
+    <div>
+      <h2 class="rv">Technical Skills</h2>
+      <div class="grid g2" id="skillGrid"></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- PROJECTS (light) -->
+<section class="light" id="projects">
+  <div class="wrap">
+    <div class="rule"><span>/featured</span><span>3 projects</span></div>
+    <div class="sec"><div class="vlabel" aria-hidden="true">/projects</div>
+    <div>
+      <h2 class="rv">Featured Projects</h2>
+      <p class="lead mute">Engineering ideas turned into practical solutions.</p>
+      <div class="grid g3" id="projGrid"></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="rule"><span>/experience</span><span>academic & technical</span></div>
+    <div class="sec"><div class="vlabel" aria-hidden="true">/experience</div>
+    <div>
+      <h2 class="rv">Academic & Technical Activities</h2>
+      <div class="grid g2">
+        <div class="card rv"><h3>Technical Projects</h3><p>Developing electronics and engineering projects as part of academic and innovation activities.</p></div>
+        <div class="card rv"><h3>Hackathons</h3><p>Participating in technical hackathons and collaborative problem-solving activities.</p></div>
+        <div class="card rv"><h3>Technical Events</h3><p>Participating in and organizing technical events and activities within the college community.</p></div>
+        <div class="card rv"><h3>Design Thinking</h3><p>Working on problem identification, ideation, prototyping and engineering solution development.</p></div>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" style="background:var(--navy)">
+  <div class="wrap">
+    <div class="rule"><span>/achievements</span><span>edit with real details</span></div>
+    <div class="sec"><div class="vlabel" aria-hidden="true">/achievements</div>
+    <div>
+      <h2 class="rv">Achievements & Activities</h2>
+      <div class="grid g3">
+        <div class="card rv"><h3>Hackathon Participation</h3><span class="ph-note">[ADD EVENT NAME & YEAR]</span></div>
+        <div class="card rv"><h3>Technical Event Participation</h3><span class="ph-note">[ADD EVENT NAME & YEAR]</span></div>
+        <div class="card rv"><h3>Project Development</h3><span class="ph-note">[ADD DETAILS]</span></div>
+        <div class="card rv"><h3>Technical Association Activities</h3><span class="ph-note">[ADD ASSOCIATION & ROLE]</span></div>
+        <div class="card rv"><h3>Workshops / Certifications</h3><span class="ph-note">[ADD CERTIFICATE NAME & ISSUER]</span></div>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- EDUCATION (light) -->
+<section class="light" id="education">
+  <div class="wrap">
+    <div class="rule"><span>/education</span><span>timeline</span></div>
+    <div class="sec"><div class="vlabel" aria-hidden="true">/education</div>
+    <div>
+      <h2 class="rv">Education</h2>
+      <div class="tl">
+        <div class="rv"><em>2025 – Present · Current</em><h3>B.E. Electronics and Communication Engineering</h3>
+          <p><strong>M. Kumarasamy College of Engineering</strong> · 2nd Year Undergraduate</p>
+          <p class="mute">Currently developing strong fundamentals in electronics, communication systems, digital electronics, circuit analysis and programming.</p></div>
+        <div class="rv"><em><span class="ph-note">[ADD YEAR]</span></em><h3>Higher Secondary Education</h3>
+          <p><span class="ph-note">[ADD SCHOOL NAME]</span></p>
+          <p class="mute">Completed school education with a foundation in mathematics, science and technology.</p></div>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- EXPLORING -->
+<section id="exploring">
+  <div class="wrap">
+    <div class="rule"><span>/interests</span><span>what's next</span></div>
+    <div class="sec"><div class="vlabel" aria-hidden="true">/exploring</div>
+    <div>
+      <h2 class="rv">What I'm Exploring</h2>
+      <div class="grid g3" id="explore"></div>
+      <h2 class="rv" style="margin-top:90px">My Engineering Journey</h2>
+      <div class="tl" id="journey"></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section class="light" id="resume" style="padding:80px 0">
+  <div class="wrap" style="text-align:center">
+    <h2 class="rv" style="margin:0 auto">Resume</h2>
+    <p class="lead mute" style="margin:14px auto 26px">Interested in my academic background, technical skills and projects?</p>
+    <div class="cta" style="justify-content:center">
+      <a class="btn" href="resume.pdf" download>Download Resume</a>
+      <a class="btn ghost" style="color:var(--paper-ink);border-color:#9aa9c2" href="resume.pdf" target="_blank" rel="noopener">View Resume</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="rule"><span>/contact</span><span>say hello</span></div>
+    <div class="sec"><div class="vlabel" aria-hidden="true">/connect</div>
+    <div>
+      <h2 class="rv">Let's Connect</h2>
+      <p class="lead mute">I’m always interested in connecting with fellow students, engineers, recruiters, mentors and people working on interesting technical projects.</p>
+      <div class="grid g2" style="align-items:start">
+        <div style="display:grid;gap:14px">
+          <div class="card"><h3>Email</h3><p>[EMAIL]</p></div>
+          <div class="card"><h3>LinkedIn</h3><p>[LINKEDIN URL]</p></div>
+          <div class="card"><h3>GitHub</h3><p>[GITHUB URL]</p></div>
+          <div class="card"><h3>Location</h3><p>Tamil Nadu, India</p></div>
+        </div>
+        <form id="form" class="card" novalidate>
+          <div><label for="n">Name</label><input id="n" name="name" autocomplete="name" required><div class="err" data-for="n"></div></div>
+          <div><label for="e">Email</label><input id="e" name="email" type="email" autocomplete="email" required><div class="err" data-for="e"></div></div>
+          <div><label for="s">Subject</label><input id="s" name="subject" required><div class="err" data-for="s"></div></div>
+          <div><label for="m">Message</label><textarea id="m" name="message" required></textarea><div class="err" data-for="m"></div></div>
+          <button class="btn" type="submit">Send Message</button>
+          <div class="ok" id="ok" role="status"></div>
+        </form>
+      </div>
+    </div></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div><strong style="color:#fff">JAIAAKASH B</strong><br>B.E. Electronics & Communication Engineering Student</div>
+      <div class="fl"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+      <div class="fl"><a href="https://linkedin.com/in/YOUR-PROFILE">LinkedIn</a><a href="https://github.com/YOUR-USERNAME">GitHub</a><a href="mailto:your.email@example.com">Email</a></div>
+    </div>
+    <div class="bot"><span>© 2026 Jaiaakash B. All rights reserved.</span><span>Built with curiosity & code.</span></div>
+  </div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mt">
+  <div class="doc"><button class="btn ghost sm x" id="close">Close</button><div id="mbody"></div></div>
+</div>
+
+<script>
+/* ===== EDIT YOUR CONTENT HERE ===== */
+const SKILLS=[
+ ["Electronics",["Analog Electronics","Digital Electronics","Circuit Analysis","Electronic Circuit Design","Operational Amplifiers","IC-based Circuit Design"],"Learning"],
+ ["Embedded & Hardware",["Embedded Systems","Sensors","PCB Concepts","Hardware Prototyping","Circuit Debugging","Breadboard Prototyping"],"Learning"],
+ ["Programming",["Java","Basic Programming","Problem Solving"],"Foundation"],
+ ["Tools & Design",["PCB Design Concepts","Circuit Simulation","PowerPoint","Technical Documentation"],"Foundation"]
+];
+const PROJECTS=[
+ {t:"Frequency-to-Voltage Converter using IC 555",c:"Analog Electronics / Signal Conditioning",
+  d:"An IC 555-based frequency-to-voltage conversion system designed to convert pulse frequency into a proportional DC voltage. The concept can be applied to motor speed measurement, conveyor monitoring and sensor signal conditioning.",
+  tech:["IC 555","Op-Amp","Resistors","Capacitors","Signal conditioning"],
+  github:"", status:"Academic project [EDIT: concept / simulated / built]",
+  problem:"[ADD] Many sensing systems output pulses whose frequency carries the information, but controllers and meters need a steady voltage.",
+  objective:"Convert pulse frequency into a proportional DC voltage.",
+  solution:"A 555 timer shapes input pulses into fixed-width pulses; an RC stage and op-amp stage average them into a DC level.",
+  principle:"Average value of fixed-width pulses rises linearly with frequency, so output voltage tracks input frequency.",
+  apps:"Motor speed measurement, conveyor monitoring, sensor signal conditioning.",
+  contrib:"[ADD your specific role: design, simulation, testing, documentation]"},
+ {t:"Smart PCB Fault Detection and Localisation System",c:"Electronics / Design Thinking",
+  d:"A hardware-oriented system concept for detecting and localising faults on PCB sections using voltage/current monitoring and fault indication techniques.",
+  tech:["Sensors","Comparators","Op-Amp circuits","LEDs","Buzzer","Protection circuitry"],
+  github:"", status:"Concept / design stage [EDIT if changed]",
+  problem:"[ADD] Finding faulty sections on a PCB is slow and manual.",
+  objective:"Detect a fault and indicate which board section is affected.",
+  solution:"Each section's voltage/current is monitored; comparators flag out-of-range values and drive LED and buzzer indication.",
+  principle:"Sensed values are compared against reference thresholds; a crossing triggers the indicator for that section.",
+  apps:"Prototype testing, lab debugging, educational demonstration.",
+  contrib:"[ADD your specific role]"},
+ {t:"Automatic Staircase Light Controller",c:"Electronic Automation",
+  d:"An IC 555-based automatic lighting control concept designed to control staircase lighting according to detected activity while reducing unnecessary power consumption.",
+  tech:["IC 555","Sensors","Relay","Transistor","LEDs"],
+  github:"", status:"Concept / design stage [EDIT if changed]",
+  problem:"[ADD] Staircase lights are often left on when nobody is using them.",
+  objective:"Switch lighting on only when activity is detected and turn it off after a delay.",
+  solution:"A sensor triggers a 555 timer in monostable mode; a transistor drives a relay that powers the lights for the timed period.",
+  principle:"Sensor trigger starts a timed pulse; when the pulse ends, the relay releases and the lights turn off.",
+  apps:"Staircases, corridors, small automation demos.",
+  contrib:"[ADD your specific role]"}
+];
+const EXPLORE=[
+ ["Embedded Systems","M7 7h10v10H7zM3 9h4M3 15h4M17 9h4M17 15h4M9 3v4M15 3v4M9 17v4M15 17v4"],
+ ["PCB Design","M4 6h6l3 4h7M4 12h4l3 4h9M4 18h8M20 10v.01M20 16v.01"],
+ ["Analog Electronics","M2 12c3-8 6-8 9 0s6 8 9 0 2-4 2-4"],
+ ["Digital Electronics","M3 16h4V8h4v8h4V8h4v8h2"],
+ ["VLSI & Semiconductor Technology","M5 5h14v14H5zM9 9h6v6H9z"],
+ ["Electronic Product Design","M12 3l8 4.5v9L12 21l-8-4.5v-9zM12 12l8-4.5M12 12v9M12 12L4 7.5"]
+];
+const JOURNEY=[
+ ["2025","Started B.E. Electronics & Communication Engineering"],
+ ["2026","Developed stronger fundamentals in electronics and programming"],
+ ["2026","Worked on electronics and design-thinking projects"],
+ ["2026+","Building projects, participating in technical events and preparing for internships"]
+];
+/* ================================== */
+
+const $=s=>document.querySelector(s);
+$("#skillGrid").innerHTML=SKILLS.map(([n,l,lv])=>`<div class="card rv"><h3>${n}</h3><div class="chips">${l.map(x=>`<span class="chip">${x}</span>`).join("")}</div><p class="skill">Level: ${lv}</p></div>`).join("");
+$("#projGrid").innerHTML=PROJECTS.map((p,i)=>`<article class="card proj rv"><div class="cat">${p.c}</div><h3>${p.t}</h3><p>${p.d}</p><div class="chips">${p.tech.map(x=>`<span class="chip" style="background:#f3f6fb;color:#0a1424;border-color:#cdd6e4">${x}</span>`).join("")}</div><div class="status">${p.status}</div><div class="row"><button class="btn sm" data-p="${i}">View Project</button>${p.github?`<a class="btn ghost sm" style="color:#0a1424" href="${p.github}" target="_blank" rel="noopener">GitHub</a>`:""}</div></article>`).join("");
+$("#explore").innerHTML=EXPLORE.map(([n,d],i)=>`<div class="card rv"><svg class="ico" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg><h3>${n}</h3></div>`).join("");
+$("#journey").innerHTML=JOURNEY.map(([y,t])=>`<div class="rv"><em>${y}</em><h3 style="font-size:17px;font-weight:600">${t}</h3></div>`).join("");
+
+/* modal */
+const modal=$("#modal");let last;
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-p]");if(!b)return;
+  const p=PROJECTS[b.dataset.p];last=b;
+  $("#mbody").innerHTML=`<p class="mute" style="font-size:13px">${p.c}</p><h3 id="mt">${p.t}</h3>
+  <h4>Problem Statement</h4><p>${p.problem}</p><h4>Objective</h4><p>${p.objective}</p>
+  <h4>Proposed Solution</h4><p>${p.solution}</p><h4>Working Principle</h4><p>${p.principle}</p>
+  <h4>Components / Technologies</h4><ul>${p.tech.map(x=>`<li>${x}</li>`).join("")}</ul>
+  <h4>Applications</h4><p>${p.apps}</p><h4>My Contribution</h4><p>${p.contrib}</p><h4>Project Status</h4><p>${p.status}</p>`;
+  modal.classList.add("open");$("#close").focus();
+});
+const closeM=()=>{modal.classList.remove("open");last&&last.focus()};
+$("#close").onclick=closeM;modal.onclick=e=>{if(e.target===modal)closeM()};
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeM()});
+
+/* nav */
+$("#burger").onclick=function(){const o=$("#links").classList.toggle("open");this.setAttribute("aria-expanded",o)};
+$("#links").addEventListener("click",e=>{if(e.target.tagName==="A")$("#links").classList.remove("open")});
+const navA=[...document.querySelectorAll(".links a[href^='#']")];
+const secObs=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)navA.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+x.target.id))}),{rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll("section[id]").forEach(s=>secObs.observe(s));
+const rvObs=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");rvObs.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll(".rv").forEach(el=>rvObs.observe(el));
+
+/* form validation (no backend: opens mail client; swap for Formspree/Netlify Forms later) */
+$("#form").addEventListener("submit",e=>{
+  e.preventDefault();let ok=true;
+  [["n","Enter your name."],["e","Enter a valid email address."],["s","Enter a subject."],["m","Write a message of at least 10 characters."]].forEach(([id,msg])=>{
+    const f=$("#"+id),v=f.value.trim();
+    let bad=!v||(id==="e"&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v))||(id==="m"&&v.length<10);
+    document.querySelector(`[data-for=${id}]`).textContent=bad?msg:"";f.setAttribute("aria-invalid",bad);if(bad)ok=false;
+  });
+  if(!ok)return;
+  const to="your.email@example.com";
+  location.href=`mailto:${to}?subject=${encodeURIComponent($("#s").value)}&body=${encodeURIComponent($("#m").value+"\n\n"+$("#n").value+" ("+$("#e").value+")")}`;
+  $("#ok").textContent="Your email app should open with the message ready to send.";
+});
+
+/* subtle circuit background */
+(function(){
+  const c=$("#bg"),x=c.getContext("2d");let W,H,nodes=[],t=0;
+  const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+  function size(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;nodes=[];const g=90;
+    for(let i=0;i<W/g;i++)for(let j=0;j<H/g;j++)if(Math.random()<.22)nodes.push([i*g+g/2,j*g+g/2,Math.random()*6])}
+  function draw(){
+    x.clearRect(0,0,W,H);x.strokeStyle="rgba(47,123,255,.13)";x.lineWidth=1;
+    for(let i=0;i<W;i+=90){x.beginPath();x.moveTo(i,0);x.lineTo(i,H);x.stroke()}
+    for(let j=0;j<H;j+=90){x.beginPath();x.moveTo(0,j);x.lineTo(W,j);x.stroke()}
+    x.strokeStyle="rgba(34,211,238,.28)";
+    nodes.forEach(([a,b,p],i)=>{const n=nodes[(i+3)%nodes.length];
+      x.beginPath();x.moveTo(a,b);x.lineTo(n[0],b);x.lineTo(n[0],n[1]);x.stroke();
+      x.fillStyle=`rgba(34,211,238,${.35+.35*Math.sin(t+p)})`;x.beginPath();x.arc(a,b,2.5,0,6.3);x.fill()});
+    /* waveform */
+    x.strokeStyle="rgba(47,123,255,.4)";x.beginPath();
+    for(let i=0;i<=W;i+=6){const y=H*.82+Math.sin(i/55+t)*14*(Math.sin(i/300)+1.3);i?x.lineTo(i,y):x.moveTo(i,y)}x.stroke();
+    t+=.012;if(!reduce)requestAnimationFrame(draw)}
+  size();draw();addEventListener("resize",()=>{size();if(reduce)draw()});
+})();
+</script>
+</body>
+</html>
